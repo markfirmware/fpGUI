@@ -3,6 +3,7 @@
 BUILD_OUTPUT=$(pwd)/build-output
 mkdir -p $BUILD_OUTPUT
 LOG=$BUILD_OUTPUT/build.log
+ERRORS=$BUILD_OUTPUT/build-errors.txt
 
 function build {
     cd src
@@ -17,4 +18,11 @@ function build {
     cd ../..
 }
 
+function collect-errors {
+    cat $LOG | grep -i (error|warning|note): | sort | uniq > $ERRORS
+    cat $ERRORS | tee -a $LOG
+}
+
 build |& tee $LOG
+
+collect-errors
