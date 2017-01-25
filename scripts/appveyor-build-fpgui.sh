@@ -1,6 +1,7 @@
 #!/bin/bash
 
 BUILD_OUTPUT=$(pwd)/build-output
+mkdir -p $BUILD_OUTPUT
 LOG=$BUILD_OUTPUT/build.log
 
 function build {
