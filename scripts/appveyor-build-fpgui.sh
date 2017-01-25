@@ -19,7 +19,7 @@ function build {
 }
 
 function collect-errors {
-    cat $LOG | grep -i '(error|warning|note):' | sort | uniq > $ERRORS
+    cat $LOG | egrep -i '(error|warning|note):' | sort | uniq > $ERRORS
     cat $ERRORS | tee -a $LOG
 }
 
