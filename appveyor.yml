@@ -7,4 +7,3 @@ cache:
 artifacts:
   - path: build-output
     name: fpGUI
-    type: file
