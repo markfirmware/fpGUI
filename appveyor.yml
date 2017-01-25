@@ -6,4 +6,4 @@ cache:
   - c:/Ultibo -> scripts/appveyor-install-ultibo-1.3.015.sh
 artifacts:
   - path: build-output
-  - name: fpGUI
+    name: fpGUI
